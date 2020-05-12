@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Montserrat",sans-serif;
+}
+html,body{
+   
+    min-height: 100vh;
+    /* background-color: brown; */
+}
+
+.first-container
+{
+    position: relative;
+    z-index: 3;
+}
+
+.heroImage{
+   animation:heroImages 17s infinite alternate-reverse;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+   max-width: 100%;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@keyframes heroImages
+{
+    0%{ background-image: url('images/round-dining-table-2306282.jpg');}
+    50%{ background-image: url('images/close-up-of-drink-in-glass-316909.jpg');}
+    100%{ background-image: url('images/hero1.jpg');}
+}
+
+
+.heroImage .scroll{
+    position: absolute;
+    animation: moves 1s infinite alternate-reverse;
+}
+
+@keyframes moves{
+    from{transform:translate(0,0);}
+    to{transform:translate(0,-30px);}
+}
+
+header
+{
+    /* background:linear-gradient(to right bottom,pink, orange); */
+    background-color:  #1f2833;
+    text-align: center;
+    width: 100%;
+    font-family: "Montserrat",sans-serif;
+ 
+}
+
+nav{
+    display: flex;
+    list-style-type: none;
+   flex-wrap: wrap;
+    justify-content: space-around;
+align-items: center;
+position: relative;
+}
+
+.logo
+{
+    color:aquamarine;
+    font-size: large;
+    letter-spacing: 3px;
+}
+.navbar-links a
+{
+    text-decoration: none;
+    color:aquamarine;
+}
+
+.navbar-links ul
+{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */  
+}
+
+
+.navbar-links li
+{
+    padding: 8px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+/* ********************************************about us section */
+.golden-container
+{
+    background-color: aquamarine;
+    padding: 1.5em;
+    transform: skewY(-3deg);
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.golden-container::before
+{
+    content: "";
+    width: 80px;
+    height: 80px;
+    background-color:aquamarine;
+    position: absolute;
+    right:0;
+    top:-80px;
+}
+
+.golden-container::after
+{
+    content: "";
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    position: absolute;
+    right:-10px;
+    top:-160px;
+    border-radius: 50%;
+}
+
+.aboutUs{
+    transform: skewY(3deg);
+    display: grid;
+   justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80vw;
+    margin: auto;
+    grid-column-gap: 30px;
+    color: #505050;
+   
+}
+
+.aboutUs img{
+    border-radius: 100px;}
+   
+
+.aboutUs h3{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.aboutUs span
+{
+    font-size: 0.8rem;
+}
+
+.more-about
+{
+    display: grid;
+    grid-template-columns:1fr 2fr;
+    grid-gap: 10px;
+    width: 70%;
+    margin: auto;
+    color: #505050;
+    line-height: 1.5rem;
+    grid-gap: 50px;
+    align-items: center;
+}
+
+.more-about img{
+    width: 100%;
+    height:auto;
+    opacity: 1;
+}
+.top-arrow
+{
+   
+    max-width: 100%;
+    margin: auto;
+    text-align:center    ;
+}
+
+.grey-container
+{
+    background-color:  #1f2833;
+    color: aquamarine;
+    
+    width: 100%;
+    font-size: 0.8rem;
+   /* transform: skewY(3deg); */
+   
+}
+
+footer
+{ 
+    /* transform: skewY(-3deg); */
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin: auto;
+    justify-content: space-evenly;
+    grid-gap: 40px;
+  
+  
+}
+footer ul{
+    list-style-type: none;
+}
+
+footer a{
+    text-decoration: none;
+    color: aquamarine;
+}
+
+footer a:hover{
+  
+    color:white;
+}
+
+footer .copyright
+{
+    align-self: flex-end;
+}
+
+
+@media screen and (max-width:768px)
+{
+    .more-about
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+       
+    }
+    .aboutUs
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+       grid-row-gap: 30px;
+       text-align: center;
+    }
+    .more-about .c
+    {
+        order: 2;
+    }
+    .more-about .d
+    {
+        order: 1;
+    }
+
+    footer
+    {
+        
+        grid-template-columns: 1fr;
+       
+    }
+}
+
+
+
+/* **************************************************image Grid start */
+
+.gridContainer
+{
+    display: grid;
+    width: 80vw;
+    margin: auto;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    grid-auto-flow: dense;
+}
+
+.gridContainer >div >img{
+    height: auto;
+    width: 100%;
+    opacity:0.8;
+}
+.gridContainer >div >img:hover{
+   
+    opacity:1;
+}
+
+.big
+{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.horizontal{
+    grid-column: span 2;
+}
+
+.vertical{
+    grid-row: span 2;
+}
+
+
+/* **********************************************contact start */
+
+.contactSection
+{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    width: 80%;
+    margin: auto;
+    grid-gap: 20px;
+    justify-content: space-evenly;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #474545;
+    font-size: 1rem;
+}
+
+.contactSection .one{
+    grid-column: 1/-1;
+
+    
+}
+
+.contactSection .two{
+    grid-column: 1/span 4;
+   box-shadow:5px 5px 5px 0 darkgrey;
+    text-align: center;
+    padding: 20px;
+    word-break: break-all;
+}
+.contactSection .two h4{
+    padding: 8px;
+  
+}
+.contactSection .three
+{
+grid-column: 5/span7;
+grid-row: span 2;
+background-color: aquamarine;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+  }
+
+.order-now
+{
+    background: aquamarine;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.9em;
+}
+
+@media (max-width:600px)
+{
+ 
+    .contactSection .two            {
+        grid-column: 1/-1;
+       
+    }
+    .contactSection .three            {
+        grid-column: 1/-1;
+    }
+}
+@media (max-width:470px)
+{
+    .toggle-button
+    {
+        display: flex;
+    }
+
+.logo
+{
+    font-size: 1rem;
+    padding: 20px;
+}
+   
+
+    .navbar-links ul{
+flex-direction: column;
+padding: 0px;
+margin: 0;
+width: 100vw;
+
+    }
+    nav{
+        flex-direction: column;
+    }
+
+    .navbar-links a:hover{
+     
+        color:white;
+       
+            }
+
+         
+        }
+
+
